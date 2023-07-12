@@ -1,0 +1,16 @@
+.continer {
+  margin: 0 auto;
+  max-width: 1240px;
+}
+
+.col-12:hover {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+:host ::ng-deep .p-button {
+  display: block;
+  width: 100%;
+  margin: 10px 0px;
+}

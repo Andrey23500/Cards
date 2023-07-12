@@ -1,20 +1,30 @@
-<p>item works!</p>
+<div class="continer">
+  <p-button class="xl:block" [routerLink]="['/main']">Go back</p-button>
+  <p-panel header="{{product?.title}}">
+    <div class="flex">
+      <div>
+        <h4>Thumbnail</h4>
+        <img class="w-9 sm:w-24rem xl:w-16rem block xl:block mx-auto border-round" [src]="product?.thumbnail"
+          alt="img" />
+      </div>
+      <p-divider layout="vertical"></p-divider>
+      <div>
+        <h4>Description</h4>
+        <p> {{product?.description}}
+        </p>
+      </div>
+      <p-divider layout="vertical"></p-divider>
+      <div>
+        <h4>Brand</h4>
+        <p> {{product?.brand}}
+        </p>
+      </div>
+    </div>
 
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Gender</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td >{{ product?.id }}</td>
-      <td>{{ product?.title }}</td>
-      <td>{{ product?.description }}</td>
-      <td>{{ product?.price }}</td>
-    </tr>
-  </tbody>
-</table>
+    <p-accordion>
+      <p-accordionTab *ngFor="let item of product?.images" header="Images">
+        <img class="w-9 sm:w-24rem block xl:block mx-auto border-round" [src]="item" alt="title" />
+      </p-accordionTab>
+    </p-accordion>
+  </p-panel>
+</div>
